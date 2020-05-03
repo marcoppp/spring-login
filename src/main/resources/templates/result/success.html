@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Simple Login Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1 th:text="'Welcome ' + ${user.name}" />
+    <!-- <p th:text="'Password: ' + ${user.password}" /> -->
+    <a href="/login">Logout</a>
+</body>
+</html>

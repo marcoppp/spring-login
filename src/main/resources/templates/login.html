@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Simple Login Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Login Form</h1>
+
+    <form action="#" th:action="@{/login}" th:object="${user}" method="post">
+        <p>Name: <input type="text" th:field="*{name}" required/> 
+            <div style="color:crimson" th:if="${#fields.hasErrors('name')}">name error: length must be between 3 and 30</div></p>
+        <p>Password: <input type="password" th:field="*{password}" required/>
+            <div style="color:crimson" th:if="${#fields.hasErrors('password')}">password error: length must be between 3 and 30</div></p>
+        <p><input type="submit" value="Submit" /> </p>
+    </form>
+</body>
+</html>
