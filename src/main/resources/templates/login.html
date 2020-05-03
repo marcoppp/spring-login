@@ -6,7 +6,12 @@
 </head>
 <body>
     <h1>Login Form</h1>
-
+    <div th:if="${param.error}">
+        Invalid username and password.
+    </div>
+    <div th:if="${param.logout}">
+        You have been logged out.
+    </div>
     <form action="#" th:action="@{/login}" th:object="${user}" method="post">
         <p>Name: <input type="text" th:field="*{name}" required/> 
             <div style="color:crimson" th:if="${#fields.hasErrors('name')}">name error: length must be between 3 and 30</div></p>
